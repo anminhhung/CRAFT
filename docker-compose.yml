@@ -1,0 +1,15 @@
+version: "3"
+services:
+  # web:
+  craft:
+    image: craft_image:latest
+    container_name: craft_services
+    restart: always
+    build: .
+    ports: 
+      - "5555:5555"
+    volumes:
+      - .:/CRAFT
+
+    
+    
