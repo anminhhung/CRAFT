@@ -79,10 +79,14 @@ def saveResult(img, boxes, image_path =None, dirname='./result/', verticals=None
 
             ROI = img_tmp[poly[0][1]:poly[3][1], poly[0][0]:poly[1][0], :]
 
+            time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            number = str(random.randint(0, 10000))
+            time_number = time + '_' + number + '_'
+
             if image_path != None:
                 ROI_name = dirname + "ROI_" + (image_path.split("/")[-1]).split('.')[0] + '_' + str(i) + '.jpg'
             else:
-                ROI_name = dirname + "ROI_" + str(i) + '.jpg'
+                ROI_name = dirname + "ROI_" + time_number + str(i) + '.jpg'
                 
             cv2.imwrite(ROI_name, ROI)
             

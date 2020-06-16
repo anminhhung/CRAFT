@@ -9,7 +9,7 @@ from craft import run_craft_image
 
 @app.route('/craft', methods=['POST'])
 def run_craft():
-    id = 1
+    id = 2
     binStrImg = request.data 
     arrImg = np.fromstring(binStrImg, np.uint8)
     img = cv2.imdecode(arrImg, cv2.IMREAD_COLOR)

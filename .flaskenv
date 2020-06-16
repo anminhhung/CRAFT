@@ -1,1 +1,0 @@
-FLASK_APP=craft_app.py
