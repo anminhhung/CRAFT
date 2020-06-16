@@ -86,7 +86,7 @@ def saveResult(img, boxes, image_path =None, dirname='./result/', verticals=None
                 
             cv2.imwrite(ROI_name, ROI)
             
-            list_ROI.append(ROI)
+            list_ROI.append(ROI_name)
 
             cv2.polylines(img, [poly.reshape((-1, 1, 2))], True, color=(0, 0, 255), thickness=1)
             
@@ -101,4 +101,5 @@ def saveResult(img, boxes, image_path =None, dirname='./result/', verticals=None
                 cv2.putText(img, "{}".format(texts[i]), (poly[0][0]+1, poly[0][1]+1), font, font_scale, (0, 0, 0), thickness=1)
                 cv2.putText(img, "{}".format(texts[i]), tuple(poly[0]), font, font_scale, (0, 255, 255), thickness=1)
 
-        return list_ROI # ko can return
+        # return path output photos craft
+        return list_ROI
