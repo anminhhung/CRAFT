@@ -32,5 +32,10 @@ RUN cd CRAFT && \
 
 WORKDIR /CRAFT
 
+
+# CMD ["python", "manage.py", "db", "init"] 
+# CMD ["python", "manage.py", "db", "migrate"] 
+# CMD ["python", "manage.py", "db", "upgrade"]
+
 #CMD ["gunicorn", "-b", "0.0.0.0:5555", "--workers=5", "--threads=2", "wsgi:app"]
 CMD ["python", "run_craft.py"]
